@@ -32,3 +32,8 @@ class OneIDProfile(models.Model):
     refresh_token = models.CharField(max_length=255, blank=True, null=True)
     identity_common = models.CharField(max_length=255, blank=True, null=True)
     access_token_expire_date = models.DateTimeField(null=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['user']),
+        ]
